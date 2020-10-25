@@ -44,39 +44,6 @@ class LoginController extends Controller
     }
 
 
-    // public function login(Request $request)
-    // {
-    //     $this->validateLogin($request);
-    //     if($this->hasTooManyLoginAttempts($request)){
-    //         $this->fireLockoutResponse($request);
-    //     }
-    //      //-------------------
-    //
-    //    if($this->guard()->validate($this->credentials($request))){
-    //       $user=$this->guard()->getLastAttempted();
-    //       if($user->is_active && $this->attemptLogin($request)){
-    //           return $this->sendLoginResponse($request);
-    //       }
-    //
-    //      else{
-    //         $this->incrementLoginAttempts($request);
-    //         $code=rand(11111,99999);
-    //         //$user->code=SendCode::sendCode($user->phone);
-    //         $user->code=$code;
-    //         if($user->save()){
-    //             return redirect('/verify?phone='.$user->phone);
-    //         }
-    //      }
-    //    }
-    //   //-----------
-    //   $this->incrementLoginAttempts($request);
-    //   return $this->sendFailedLoginResponse($request);
-    //
-    //
-    //
-    // }
-
-
     public function login(\Illuminate\Http\Request $request) {
         $this->validateLogin($request);
 
@@ -115,6 +82,20 @@ class LoginController extends Controller
         return $this->sendFailedLoginResponse($request);
     }
 
+    protected function authenticated(Request $request, $user)
+    {
+        // if($user->hasRole('superadministrator')){
+        //     return redirect('/admin');
+        // }
+
+        if($user->hasRole('user')){
+            return redirect('/custom');
+        }
+
+        // if($user->hasRole('agent')){
+        //     return redirect('/agent');
+        // }
+      }
 
 
 

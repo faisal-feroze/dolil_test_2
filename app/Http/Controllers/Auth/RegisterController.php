@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
+use App\SendCode;
 
 class RegisterController extends Controller
 {
@@ -91,8 +92,9 @@ class RegisterController extends Controller
         //return $user;
         if($user){
             //$user->code=SendCode::sendCode($user->phone);
-            $code=rand(11111,99999);
-            $user->code = $code;
+            //$code=rand(11111,99999);
+            //$user->code = $code;
+            $user->code=SendCode::sendCode($user->phone);
             $user->save();
         }
     }

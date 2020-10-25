@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ee6b44edefeaa6a9ea901748a1b3c21",
+    "content-hash": "8bbd5f2a4d8f1e5b5c3e039a2b3b1400",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2284,6 +2284,49 @@
                 }
             ],
             "time": "2020-10-17T17:37:41+00:00"
+        },
+        {
+            "name": "sslwireless/sslwireless-sms",
+            "version": "v0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rahulhaque/sslwireless-sms-wrapper-php.git",
+                "reference": "d82700b52c2511f21e6c43edf27181a41abccadf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rahulhaque/sslwireless-sms-wrapper-php/zipball/d82700b52c2511f21e6c43edf27181a41abccadf",
+                "reference": "d82700b52c2511f21e6c43edf27181a41abccadf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SslWireless\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rahul Haque",
+                    "email": "rahulhaque07@gmail.com"
+                }
+            ],
+            "description": "A simple php wrapper for sslwireless sms api.",
+            "keywords": [
+                "api-wrapper",
+                "laravel",
+                "php",
+                "sms",
+                "sslwireless"
+            ],
+            "time": "2018-02-17T20:02:37+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
