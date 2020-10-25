@@ -20,3 +20,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/verify', 'verifyController@getVerify')->name('get_verify');
+
+Route::post('/verify', 'verifyController@postVerify')->name('post_verify');
+
+
+Route::get('/custom', 'verifyController@custom_form')->name('custom_form');
+
+Route::post('/save', 'verifyController@save')->name('save');

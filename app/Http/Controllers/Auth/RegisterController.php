@@ -8,6 +8,8 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -86,6 +88,22 @@ class RegisterController extends Controller
         ]);
 
         $user->attachRole('user');
-        return $user;
+        //return $user;
+        if($user){
+            //$user->code=SendCode::sendCode($user->phone);
+            $code=rand(11111,99999);
+            $user->code = $code;
+            $user->save();
+        }
     }
+
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        event(new Registered($user = $this->create($request->all())));
+        return $this->registered($request,$user) ?: redirect('/verify?phone='.$request->phone);
+        //return $this->registered($request,$user) ?: redirect('/verify');
+    }
+
+
 }
