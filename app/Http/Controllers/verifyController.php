@@ -26,9 +26,9 @@ class verifyController extends Controller
       }
   }
 
-  public function custom_form(){
-      return view('custom_form');
-  }
+  // public function custom_form(){
+  //     return view('custom_form');
+  // }
 
   public function save(Request $request){
       $inputs = $request->all();

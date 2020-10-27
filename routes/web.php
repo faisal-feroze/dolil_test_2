@@ -26,6 +26,12 @@ Route::get('/verify', 'verifyController@getVerify')->name('get_verify');
 Route::post('/verify', 'verifyController@postVerify')->name('post_verify');
 
 
-Route::get('/custom', 'verifyController@custom_form')->name('custom_form');
+Route::get('/custom', 'UserController@custom_form')->name('custom_form');
 
-Route::post('/save', 'verifyController@save')->name('save');
+Route::post('/save', 'UserController@form_save')->name('form_save');
+
+Route::get('/user', 'UserController@index')->name('index');
+
+Route::get('/user/profile', 'UserController@user_profile')->name('user_profile');
+
+Route::patch('/user/profile/update/{id}', 'UserController@user_update')->name('user_update');

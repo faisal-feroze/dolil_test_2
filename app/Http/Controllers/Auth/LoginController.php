@@ -89,7 +89,7 @@ class LoginController extends Controller
         // }
 
         if($user->hasRole('user')){
-            return redirect('/custom');
+            return redirect('/user');
         }
 
         // if($user->hasRole('agent')){

@@ -47,3 +47,36 @@ input.invalid {
 .step.finish {
   background-color: #4CAF50;
 }
+
+
+
+/**************************************************************************/
+
+.h_center{
+  text-align: center;
+  margin: 40px auto;
+  margin-bottom: 60px;
+}
+
+.d_container{
+  max-width: 1200px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.d_container .form_parent{
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-column-gap: 20px;
+}
+
+.propic{
+  text-align: center;
+}
+.propic img {
+    width: 45%;
+}
+
+.d_home{
+  height: 60vh;
+}
